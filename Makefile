@@ -4,3 +4,6 @@ install:
 
 train:
 	python -m classifier.train --n_epochs=2
+
+test:
+	pytest
