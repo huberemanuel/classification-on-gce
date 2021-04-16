@@ -52,7 +52,6 @@ def load_model(lr_rate : float = 0.0001):
 
 def train(epochs : int = 1):
     train_dataset, test_dataset = load_data()
-    print(train_dataset, test_dataset)
 
     model = load_model()
 
