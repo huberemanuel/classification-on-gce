@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140461850-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140461850-1');
+  </script>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v2.3.7/dist/mini-default.min.css">
+  <link rel="stylesheet"  href="./static/style.css">
+
+  <meta charset="UTF-8">
+  <title>Reconhecimento de dígitos</title>
+</head>
+
+<div class="common">
+
+<body>
+<div class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <br/>
+    <h1>Reconhecimento de dígitos com Tensorflow e FastAPI</h1>
+    <p>
+    Desenhe um dígito e espere a predição ocorrer.
+    <p>
+   </br>
+  <div class="boxitem">
+            <canvas id="inputimg" width="196" height="196"></canvas>
+            <button id="clearbtn" class="primary" >Clear</button>
+  </div>
+
+  <div class="boxitem">
+            <div id="predictdigit">0</div>
+            <div id="probStr">Probabilidade: </div>
+  </div>
+  </div>
+</div>
+
+
+<script src = "./static/index.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//d3js.org/d3.v5.min.js"></script>
+</body>
