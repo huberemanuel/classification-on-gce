@@ -3,7 +3,10 @@ install:
 	pip3 install -e .
 
 train:
-	python3 -m classifier.train --n_epochs=2
+	python3 -m classifier.train --n_epochs=3
 
 test:
 	pytest
+
+serve:
+	uvicorn classifier.web.app:app 
