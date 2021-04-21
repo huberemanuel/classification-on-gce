@@ -3,7 +3,7 @@ install:
 	pip3 install -e .
 
 train:
-	python3 -m classifier.train --n_epochs=3
+	python3 -m classifier.train --n_epochs=1
 
 test:
 	pytest
