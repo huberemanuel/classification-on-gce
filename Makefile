@@ -10,3 +10,6 @@ test:
 
 serve:
 	uvicorn classifier.web.app:app 
+
+docker-serve:
+	docker run -v ~/.config/gcloud:/root/.config/gcloud -p 8084:8084 classifier_web
