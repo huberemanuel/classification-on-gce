@@ -8,9 +8,10 @@ let mouselbtn = false;
 // initilize
 window.onload = function(){
 
-    ctxIn.fillStyle = "white";
+    ctxIn.fillStyle = "black";
     ctxIn.fillRect(0, 0, cvsIn.width, cvsIn.height);
     ctxIn.lineWidth = 7;
+    ctxIn.strokeStyle = "white";
     ctxIn.lineCap = "round";
 }
 
@@ -84,9 +85,9 @@ cvsIn.addEventListener('contextmenu', function(e) {
 document.getElementById("clearbtn").onclick = onClear;
 function onClear(){
     mouselbtn = false;
-    ctxIn.fillStyle = "white";
-    ctxIn.fillRect(0, 0, cvsIn.width, cvsIn.height);
     ctxIn.fillStyle = "black";
+    ctxIn.fillRect(0, 0, cvsIn.width, cvsIn.height);
+    ctxIn.fillStyle = "white";
 }
 
 // post data to server for recognition
