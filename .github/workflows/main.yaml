@@ -24,3 +24,9 @@ jobs:
     
     - name: Test package
       run: make test
+
+    - name: Train minimal model
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+      run: make train
+      
