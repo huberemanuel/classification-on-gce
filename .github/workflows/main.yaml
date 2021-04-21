@@ -19,6 +19,13 @@ jobs:
       with:
         python-version: 3.8
 
+    # Setup gcloud CLI
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        service_account_email: ${{ secrets.GCP_EMAIL }}
+        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+        export_default_credentials: true
+
     - name: Install dependencies and classifier package
       run: make install
     
@@ -26,6 +33,4 @@ jobs:
       run: make test
 
     - name: Train minimal model
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       run: make train
