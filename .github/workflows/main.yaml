@@ -34,3 +34,27 @@ jobs:
 
     - name: Train minimal model
       run: make train
+
+
+  deploy:
+    name: "Deploy on GKE"
+    runs-on: ubuntu-latest
+    needs: ci
+
+    steps:
+    - name: Configure docker auth
+      run: gcloud auth configure-docker
+
+    - name: Build docker image
+      run: docker build -t classifier_web
+
+    - name: Upload image on Google Artifact Registry
+      run: |
+        docker tag classifier_web us-central1-docker.pkg.dev/data-lake-test-gcp-iac/classifier-web-app/latest
+        docker push us-central1-docker.pkg.dev/data-lake-test-gcp-iac/classifier-web-app/latest
+
+    - name: Deploy docker image 
+      run: |
+        gcloud container clusters create classifier-web-app-cluster \
+        --project=data-lake-test-gcp-iac \
+        --zone=us-central1 
