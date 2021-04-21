@@ -46,7 +46,7 @@ jobs:
       run: gcloud auth configure-docker
 
     - name: Build docker image
-      run: docker build -t classifier_web
+      run: docker build -t classifier_web .
 
     - name: Upload image on Google Artifact Registry
       run: |
